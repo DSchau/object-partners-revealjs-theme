@@ -7,8 +7,8 @@ cache:
 script: yarn test
 
 before_deploy:
-  - cd dist
   - yarn deploy
+  - cd dist
 deploy:
   - provider: releases
     skip_cleanup: true
