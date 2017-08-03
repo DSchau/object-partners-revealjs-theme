@@ -16,10 +16,11 @@ deploy:
     api_key: $GITHUB_TOKEN
     on:
       tags: true
-  # - provider: npm
-  #   email: $NPM_EMAIL
-  #   api_key: $NPM_API_KEY
-  #   on:
-  #     tags: true
+  - provider: npm
+    email: $NPM_EMAIL
+    api_key: $NPM_API_KEY
+    skip_cleanup: true
+    on:
+      tags: true
 after_deploy:
   - cd ../
