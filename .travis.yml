@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  yarn: true
+
+script: yarn test
+
+before_deploy: yarn deploy
+deploy:
+  - provider: releases
+    skip_cleanup: true
+    overwrite: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    on:
+      tags: true
+  - provider: npm
+    on:
+      tags: true
+      email: $NPM_EMAIL
+      api_key: $NPM_API_KEY
