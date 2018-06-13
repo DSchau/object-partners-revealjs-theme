@@ -36,6 +36,9 @@ html {
   &.print-pdf {
     body {
       background: none !important;
+      &:before, &:after {
+        content: none !important;
+      }
     }
   }
   &:not(.print-pdf) {

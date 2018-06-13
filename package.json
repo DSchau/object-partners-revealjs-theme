@@ -1,6 +1,6 @@
 {
   "name": "@objectpartners/revealjs-theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "revealjs-theme.css",
   "repository": "git@github.com:DSchau/object-partners-revealjs-theme.git",
   "author": "Dustin Schau <dustinschau@gmail.com>",
