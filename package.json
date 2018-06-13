@@ -9,7 +9,6 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "npm run build",
     "prebuild": "npm run clean && mkdirp dist",
     "build": "npm run style",
     "predeploy": "npm run build",
