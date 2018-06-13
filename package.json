@@ -1,6 +1,6 @@
 {
   "name": "@objectpartners/revealjs-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "revealjs-theme.css",
   "repository": "git@github.com:DSchau/object-partners-revealjs-theme.git",
   "author": "Dustin Schau <dustinschau@gmail.com>",
@@ -9,6 +9,7 @@
     "access": "public"
   },
   "scripts": {
+    "prepare": "npm run build",
     "prebuild": "npm run clean && mkdirp dist",
     "build": "npm run style",
     "predeploy": "npm run build",
@@ -31,7 +32,7 @@
     "lite-server": "~2.2.2",
     "mkdirp": "~0.5.1",
     "mz": "^2.6.0",
-    "node-sass": "~4.5.0",
+    "node-sass": "~4.9.0",
     "postcss-assets": "~4.1.0",
     "postcss-cli": "~3.0.0-beta",
     "reveal.js": "~3.4.1"

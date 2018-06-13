@@ -33,68 +33,72 @@ pre code {
 }
 
 html {
-  &:before {
-    content: '';
-    background: inline('./images/OPi-logo.svg') no-repeat right 10px center / auto 50%;
-    @include absolute();
-    height: $header-height;
-    width: 100%;
-    z-index: $base-index + 2;
-  }
-  &:after {
-    @include absolute();
-    height: $header-height;
-    width: 100%;
-    z-index: $base-index - 1;
-    background: linear-gradient(to left, mix(white, $opi-black, 10%), black 75%);
-    transition: height 500ms ease-in-out, background 250ms ease-in-out;
-
-  }
-  &.title, &.title-slide, &.heading, &.heading-slide {
-    h1, h2 {
-      text-align: left;
-    }
-    h1 {
-      color: white;
-    }
-    section.present {
-      transform: skewY(-8deg);
+  &:not(.print-pdf) {
+    &:before {
+      content: '';
+      background: inline('./images/OPi-logo.svg') no-repeat right 10px center / auto 50%;
+      @include absolute();
+      height: $header-height;
+      width: 100%;
+      z-index: $base-index + 2;
     }
     &:after {
-      background: linear-gradient(65deg, black, mix(white, $opi-black, 10%) 75%);
-      height: 65%;
-      transform: skewY(-8deg);
-      transform-origin: 0;
+      @include absolute();
+      height: $header-height;
+      width: 100%;
+      z-index: $base-index - 1;
+      background: linear-gradient(to left, mix(white, $opi-black, 10%), black 75%);
+      transition: height 500ms ease-in-out, background 250ms ease-in-out;
     }
-    body:after {
-      width: 0;
+
+    &.title, &.title-slide, &.heading, &.heading-slide {
+      section.present {
+        transform: skewY(-8deg);
+      }
+      h1, h2 {
+        text-align: left;
+      }
+      h1 {
+        color: white;
+      }
+      &:after {
+        background: linear-gradient(65deg, black, mix(white, $opi-black, 10%) 75%);
+        height: 65%;
+        transform: skewY(-8deg);
+        transform-origin: 0;
+      }
+      body:after {
+        width: 0;
+      }
     }
   }
 }
 
 @mixin bodyBackground() {
-  background: inline('./images/pattern.svg');
-  background-repeat: repeat;
-  background-size: 200px;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to left, rgba($backgroundColor, 1) 25%, rgba($backgroundColor, 0));
-  }
-  &:after {
-    @include absolute();
-    height: $header-height;
-    width: 1%;
-    background-color: $opi-red;
-    z-index: $base-index + 1;
-    transition: width 250ms ease-in-out;
-    transform-origin: left;
+  .html:not(.print-pdf) {
+    background: inline('./images/pattern.svg');
+    background-repeat: repeat;
+    background-size: 200px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to left, rgba($backgroundColor, 1) 25%, rgba($backgroundColor, 0));
+    }
+    &:after {
+      @include absolute();
+      height: $header-height;
+      width: 1%;
+      background-color: $opi-red;
+      z-index: $base-index + 1;
+      transition: width 250ms ease-in-out;
+      transform-origin: left;
+    }
   }
 }
 
