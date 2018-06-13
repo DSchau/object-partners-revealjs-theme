@@ -33,6 +33,11 @@ pre code {
 }
 
 html {
+  &.print-pdf {
+    body {
+      background: none !important;
+    }
+  }
   &:not(.print-pdf) {
     &:before {
       content: '';
@@ -75,30 +80,28 @@ html {
 }
 
 @mixin bodyBackground() {
-  .html:not(.print-pdf) {
-    background: inline('./images/pattern.svg');
-    background-repeat: repeat;
-    background-size: 200px;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to left, rgba($backgroundColor, 1) 25%, rgba($backgroundColor, 0));
-    }
-    &:after {
-      @include absolute();
-      height: $header-height;
-      width: 1%;
-      background-color: $opi-red;
-      z-index: $base-index + 1;
-      transition: width 250ms ease-in-out;
-      transform-origin: left;
-    }
+  background: inline('./images/pattern.svg');
+  background-repeat: repeat;
+  background-size: 200px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba($backgroundColor, 1) 25%, rgba($backgroundColor, 0));
+  }
+  &:after {
+    @include absolute();
+    height: $header-height;
+    width: 1%;
+    background-color: $opi-red;
+    z-index: $base-index + 1;
+    transition: width 250ms ease-in-out;
+    transform-origin: left;
   }
 }
 
